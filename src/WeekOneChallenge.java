@@ -16,41 +16,56 @@ public class WeekOneChallenge {
             if (input.equalsIgnoreCase("random")) {
                 System.out.println("Generating  a Random number:\t");
                 int testNumber = randomNumber.nextInt(250) + 1;
-                for (int i = 2; i < testNumber; i++) {
+                System.out.println("Your random number is:\t" + testNumber);
+                if (testNumber == 2) {
+                    System.out.println("2  is a prime number.");
+                }
+                for (int i = 2, t = 0; i < testNumber; i++) {
                     int remainder = (testNumber % i);
-
-
                     if (remainder == 0) {
+                        System.out.println("It is divisible by:\t" + i);
+                        t++;
+                    }
+                    if (i == (testNumber - 1) && t==0){
+                        System.out.println(testNumber + "  Is a Prime number\n");
+                        break;
+                    } else if ((i == (testNumber - 1))) {
                         System.out.println(testNumber + "  Is not a prime number.\n");
-                        break;
-                    } else if (i == (testNumber - 1) && i != 2) {
-                        System.out.println(testNumber + " Is a Prime number\n");
-                        break;
 
+                        break;
                     }
 
-
                 }
+
+
             } else {
                 System.out.println("Enter a Number:\t");
                 int testNumber = key.nextInt();
                 key.nextLine();
-                for (int i = 2; i < testNumber; i++) {
+                if (testNumber == 2) {
+                    System.out.println("2  Is a prime number");
+                }
+                for (int i = 2, p = 0; i < testNumber; i++) {
                     int remainder = (testNumber % i);
 
-
                     if (remainder == 0) {
-                        System.out.println(testNumber + "  Is not a prime number.\n");
-                        break;
-                    } else if (i == (testNumber - 1) && i != 2) {
+                        System.out.println("It is divisible by:\t" + i);
+                        p++;
+                    }
+
+                    if (i == (testNumber - 1) && p == 0) {
                         System.out.println(testNumber + " Is a Prime number\n");
                         break;
 
+                    } else if (i == (testNumber - 1)) {
+                        System.out.println(testNumber + "  Is not a prime number.\n");
+                        break;
                     }
 
 
                 }
             }
+
             System.out.println("Would you like to try again? (Yes/No)");
 
             String inputRedo = key.nextLine();
