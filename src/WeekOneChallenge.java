@@ -12,7 +12,7 @@ public class WeekOneChallenge {
             Scanner key = new Scanner(System.in);
             System.out.println("Would you like to choose a number?  Or use a random one? (Random/Choose)");
             String input = key.nextLine();
-
+            //Generating Random Number and testing for prime.
             if (input.equalsIgnoreCase("random")) {
                 System.out.println("Generating  a Random number:\t");
                 int testNumber = randomNumber.nextInt(250) + 1;
@@ -21,11 +21,13 @@ public class WeekOneChallenge {
                     System.out.println("2  is a prime number.");
                 }
                 for (int i = 2, t = 0; i < testNumber; i++) {
+                    //Finding each divisor
                     int remainder = (testNumber % i);
                     if (remainder == 0) {
                         System.out.println("It is divisible by:\t" + i);
                         t++;
                     }
+                    //Printing Determination after all tests
                     if (i == (testNumber - 1) && t==0){
                         System.out.println(testNumber + "  Is a Prime number\n");
                         break;
@@ -37,7 +39,7 @@ public class WeekOneChallenge {
 
                 }
 
-
+                //Input option
             } else {
                 System.out.println("Enter a Number:\t");
                 int testNumber = key.nextInt();
@@ -48,11 +50,12 @@ public class WeekOneChallenge {
                 for (int i = 2, p = 0; i < testNumber; i++) {
                     int remainder = (testNumber % i);
 
+                    //Finding each divisor
                     if (remainder == 0) {
                         System.out.println("It is divisible by:\t" + i);
                         p++;
                     }
-
+                    //Printing declaration after all tests
                     if (i == (testNumber - 1) && p == 0) {
                         System.out.println(testNumber + " Is a Prime number\n");
                         break;
@@ -65,9 +68,8 @@ public class WeekOneChallenge {
 
                 }
             }
-
+            //looping for additional responses
             System.out.println("Would you like to try again? (Yes/No)");
-
             String inputRedo = key.nextLine();
             if (inputRedo.equalsIgnoreCase("yes")) {
                 continue;
