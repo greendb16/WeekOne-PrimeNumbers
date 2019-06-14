@@ -4,15 +4,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class WeekOneChallenge {
+
     public static void main(String[] args) {
+
         while (true) {
             Random randomNumber = new Random();
-
             Scanner key = new Scanner(System.in);
             System.out.println("Would you like to choose a number?  Or use a random one? (Random/Choose)");
             String input = key.nextLine();
 
             if (input.equalsIgnoreCase("random")) {
+                System.out.println("Generating  a Random number:\t");
                 int testNumber = randomNumber.nextInt(250) + 1;
                 for (int i = 2; i < testNumber; i++) {
                     int remainder = (testNumber % i);
@@ -63,5 +65,6 @@ public class WeekOneChallenge {
 
         }
     }
+
 }
 
